@@ -1,0 +1,31 @@
+{
+    "name": "shipperdev/swagger-api-doc-generator",
+    "description": "Swagger document api generator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Rudenko",
+            "email": "max@ego-digital.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "^6.9|^7.0|^8.0|^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "ShipperDev\\SwaggerApiDocGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ShipperDev\\SwaggerApiDocGenerator\\SwaggerApiDocGeneratorProvider"
+            ]
+        }
+    }
+}
