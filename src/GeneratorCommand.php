@@ -44,9 +44,16 @@ class GeneratorCommand extends Command
 
         $config->each(function ($item, $key) {
             $this->newLine();
-            $this->components->info("Start generation " . Str::headline($key));
+
             $envs  = collect($item['env']);
             $paths = collect($item['paths']);
+
+            if ($paths->isEmpty()) {
+                return 0;
+            }
+
+            $this->components->info("Start generation " . Str::headline($key));
+
             $file_name = empty($item['file_name']) ? "$key.json" : "{$item['file_name']}.json";
 
             if ($paths->isEmpty()) {
